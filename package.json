@@ -6,7 +6,8 @@
   "author": "Lance Fisher <lance@submittable.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "debug": "jest "
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
