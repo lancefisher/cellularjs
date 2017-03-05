@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": {},
   "author": "Lance Fisher <lance@submittable.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
