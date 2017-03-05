@@ -5,7 +5,13 @@
   "repository": {},
   "author": "Lance Fisher <lance@submittable.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "babel-node src/index.test.js"
+  },
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.2.0",
     "webpack": "^2.2.1"
   }
 }
