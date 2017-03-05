@@ -1,3 +1,6 @@
 import add from './index'
 
-console.log(add(2,3));
+it('adds', () => {
+  let sum = add(2,3);
+  expect(sum).toBe(5);
+});
