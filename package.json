@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --watch",
-    "debug": "jest "
+    "cover": "jest --coverage",
+    "repl": "babel-node src/repl"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
