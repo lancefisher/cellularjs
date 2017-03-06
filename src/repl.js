@@ -1,9 +1,12 @@
-import repl from 'repl'
+/* eslint-env node */
+/* eslint-disable no-console */
+
+import repl from 'repl';
 
 // See: https://nodejs.org/api/repl.html
 
 function interpret(cmd) {
-  return `Checking ${cmd}...`
+  return `Checking ${cmd}...`;
 }
 
 function evaluate(cmd, context, filename, callback) {
@@ -11,4 +14,4 @@ function evaluate(cmd, context, filename, callback) {
 }
 
 console.log('Starting cellular REPL... (press ctrl-c to quit)');
-repl.start({prompt: '> ', eval: evaluate });
+repl.start({ prompt: '> ', eval: evaluate });

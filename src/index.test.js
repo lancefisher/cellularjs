@@ -1,7 +1,7 @@
-import add from './index'
+import add from './index';
 
 it('adds', () => {
-  let sum = add(2,3);
+  const sum = add(2, 3);
   expect(sum).toBe(5);
 });
 

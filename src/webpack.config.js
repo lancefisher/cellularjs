@@ -1,3 +1,4 @@
+/* eslint-disable */
 var path = require('path');
 
 module.exports = {
