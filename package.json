@@ -1,7 +1,7 @@
 {
   "name": "cellular",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/repl.js",
   "repository": {},
   "author": "Lance Fisher <lance@submittable.com>",
   "license": "MIT",

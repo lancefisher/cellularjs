@@ -1,10 +1,4 @@
+Cellular
+=========
 
-
-Log
-======
-
-```bash
-yarn init
-yarn add webpack --dev
-
-```
+Let's build a spreadsheet!
