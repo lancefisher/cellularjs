@@ -8,7 +8,9 @@
   "scripts": {
     "test": "jest --watch",
     "cover": "jest --coverage",
-    "repl": "babel-node src/repl"
+    "repl": "babel-node src/repl",
+    "present": "cp .vscode/settings.present.json .vscode/settings.json",
+    "unpresent": "rm .vscode/settings.json"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
