@@ -9,6 +9,7 @@
     "test": "jest --watch",
     "cover": "jest --coverage",
     "repl": "babel-node src/repl",
+    "lint": "eslint src",
     "present": "cp .vscode/settings.present.json .vscode/settings.json",
     "unpresent": "rm .vscode/settings.json"
   },
