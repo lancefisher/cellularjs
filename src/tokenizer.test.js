@@ -5,9 +5,6 @@ import {
 } from './tokenizer';
 
 function tokensShouldBe(input, expected, only = false) {
-  // console.log(input);
-  // console.log(expected);
-
   const itFn = only ? it.only : it;
   itFn(input, () => {
     const tokens = tokenize(input);
