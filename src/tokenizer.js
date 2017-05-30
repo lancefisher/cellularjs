@@ -1,11 +1,13 @@
-// Token Types
-const NAME = 'name';
-const LPAREN = 'lparen';
-const RPAREN = 'rparen';
-const COLON = 'colon';
-const STRING = 'string';
-const COMMA = 'comma';
-const NUMBER = 'number';
+const TokenTypes = {
+  NAME: Symbol('NAME'),
+  LPAREN: Symbol('LPAREN'),
+  RPAREN: Symbol('RPAREN'),
+  COLON: Symbol('COLON'),
+  STRING: Symbol('STRING'),
+  COMMA: Symbol('COMMA'),
+  NUMBER: Symbol('NUMBER'),
+  PLUS: Symbol('PLUS'),
+};
 
 class Token {
   constructor(type, value) {
@@ -22,13 +24,13 @@ function tokenize(input) {
     let char = input[current];
 
     if (char === '(') {
-      tokens.push(new Token(LPAREN, '('));
+      tokens.push(new Token(TokenTypes.LPAREN, '('));
       current += 1;
       continue;
     }
 
     if (char === ')') {
-      tokens.push(new Token(RPAREN, ')'));
+      tokens.push(new Token(TokenTypes.RPAREN, ')'));
       current += 1;
       continue;
     }
@@ -40,13 +42,19 @@ function tokenize(input) {
     }
 
     if (char === ':') {
-      tokens.push(new Token(COLON, ':'));
+      tokens.push(new Token(TokenTypes.COLON, ':'));
       current += 1;
       continue;
     }
 
     if (char === ',') {
-      tokens.push(new Token(COMMA, ','));
+      tokens.push(new Token(TokenTypes.COMMA, ','));
+      current += 1;
+      continue;
+    }
+
+    if (char === '+') {
+      tokens.push(new Token(TokenTypes.PLUS, '+'));
       current += 1;
       continue;
     }
@@ -62,7 +70,7 @@ function tokenize(input) {
       }
       current += 1;
       char = input[current];  // skip closing "
-      tokens.push(new Token(STRING, value));
+      tokens.push(new Token(TokenTypes.STRING, value));
       continue;
     }
 
@@ -75,7 +83,7 @@ function tokenize(input) {
         current += 1;
         char = input[current];
       }
-      tokens.push(new Token(NAME, value));
+      tokens.push(new Token(TokenTypes.NAME, value));
       continue;
     }
 
@@ -92,7 +100,7 @@ function tokenize(input) {
         current += 1;
         char = input[current];
       }
-      tokens.push(new Token(NUMBER, value));
+      tokens.push(new Token(TokenTypes.NUMBER, value));
       continue;
     }
 
@@ -107,11 +115,5 @@ function tokenize(input) {
 export {
     tokenize,
     Token,
-    NAME,
-    LPAREN,
-    RPAREN,
-    COLON,
-    STRING,
-    COMMA,
-    NUMBER,
+    TokenTypes,
 };
