@@ -101,3 +101,9 @@ tokensShouldBe('1 + 2', [
   new Token(TokenTypes.PLUS, '+'),
   new Token(TokenTypes.NUMBER, '2'),
 ]);
+
+tokensShouldBe('1 * 2', [
+  new Token(TokenTypes.NUMBER, '1'),
+  new Token(TokenTypes.MULTIPLY, '*'),
+  new Token(TokenTypes.NUMBER, '2'),
+]);

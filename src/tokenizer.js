@@ -7,6 +7,7 @@ const TokenTypes = {
   COMMA: Symbol('COMMA'),
   NUMBER: Symbol('NUMBER'),
   PLUS: Symbol('PLUS'),
+  MULTIPLY: Symbol('MULTIPLY'),
 };
 
 class Token {
@@ -55,6 +56,12 @@ function tokenize(input) {
 
     if (char === '+') {
       tokens.push(new Token(TokenTypes.PLUS, '+'));
+      current += 1;
+      continue;
+    }
+
+    if (char === '*') {
+      tokens.push(new Token(TokenTypes.MULTIPLY, '*'));
       current += 1;
       continue;
     }
