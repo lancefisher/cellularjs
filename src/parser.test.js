@@ -44,3 +44,11 @@ it('returns EOF when end of tokens is reached', () => {
   expect(parser.consume()).toEqual(new Token(TokenTypes.NUMBER, '3'));
   expect(parser.consume()).toEqual(new Token(TokenTypes.EOF));
 });
+
+it('parseExpression', () => {
+  const expressionString = '1 + 2 * 3';
+  const parser = new Parser(expressionString);
+
+  const expression = parser.parseExpression();
+  console.log('expression', expression);
+});

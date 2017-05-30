@@ -8,6 +8,7 @@ const TokenTypes = {
   NUMBER: Symbol('NUMBER'),
   PLUS: Symbol('PLUS'),
   MULTIPLY: Symbol('MULTIPLY'),
+  EOF: Symbol('EOF'),
 };
 
 class Token {
@@ -116,6 +117,7 @@ function tokenize(input) {
     );
   }
 
+  tokens.push(new Token(TokenTypes.EOF));
   return tokens;
 }
 
