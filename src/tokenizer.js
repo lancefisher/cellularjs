@@ -1,6 +1,7 @@
 // Token Types
 const NAME = 'name';
-const PAREN = 'paren';
+const LPAREN = 'lparen';
+const RPAREN = 'rparen';
 const COLON = 'colon';
 const STRING = 'string';
 const COMMA = 'comma';
@@ -21,13 +22,13 @@ function tokenize(input) {
     let char = input[current];
 
     if (char === '(') {
-      tokens.push(new Token(PAREN, '('));
+      tokens.push(new Token(LPAREN, '('));
       current += 1;
       continue;
     }
 
     if (char === ')') {
-      tokens.push(new Token(PAREN, ')'));
+      tokens.push(new Token(RPAREN, ')'));
       current += 1;
       continue;
     }
@@ -107,7 +108,8 @@ export {
     tokenize,
     Token,
     NAME,
-    PAREN,
+    LPAREN,
+    RPAREN,
     COLON,
     STRING,
     COMMA,

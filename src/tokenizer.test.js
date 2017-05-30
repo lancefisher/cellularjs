@@ -2,7 +2,8 @@ import {
   tokenize,
   Token,
   NAME,
-  PAREN,
+  LPAREN,
+  RPAREN,
   COLON,
   STRING,
   COMMA,
@@ -33,16 +34,16 @@ tokensShouldBe.only = (input, expected) => {
 // Example Excel formulas: https://exceljet.net/formulas
 tokensShouldBe('SUM(A1:B2)', [
   new Token(NAME, 'SUM'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
   new Token(NAME, 'A1'),
   new Token(COLON, ':'),
   new Token(NAME, 'B2'),
-  new Token(PAREN, ')'),
+  new Token(RPAREN, ')'),
 ]);
 
 tokensShouldBe('SUM(', [
   new Token(NAME, 'SUM'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
 ]);
 
 tokensShouldBe('SUM', [
@@ -52,25 +53,25 @@ tokensShouldBe('SUM', [
 // handles whitespace after name
 tokensShouldBe('SUM (A1:B2)', [
   new Token(NAME, 'SUM'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
   new Token(NAME, 'A1'),
   new Token(COLON, ':'),
   new Token(NAME, 'B2'),
-  new Token(PAREN, ')'),
+  new Token(RPAREN, ')'),
 ]);
 
 tokensShouldBe('SUM(A1, SUM(A2, A3))', [
   new Token(NAME, 'SUM'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
   new Token(NAME, 'A1'),
   new Token(COMMA, ','),
   new Token(NAME, 'SUM'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
   new Token(NAME, 'A2'),
   new Token(COMMA, ','),
   new Token(NAME, 'A3'),
-  new Token(PAREN, ')'),
-  new Token(PAREN, ')'),
+  new Token(RPAREN, ')'),
+  new Token(RPAREN, ')'),
 ]);
 
 tokensShouldBe('"red"', [
@@ -89,11 +90,11 @@ tokensShouldThrow('12.34.56', TypeError);
 
 tokensShouldBe('COUNTIF(D5:D11,"red")', [
   new Token(NAME, 'COUNTIF'),
-  new Token(PAREN, '('),
+  new Token(LPAREN, '('),
   new Token(NAME, 'D5'),
   new Token(COLON, ':'),
   new Token(NAME, 'D11'),
   new Token(COMMA, ','),
   new Token(STRING, 'red'),
-  new Token(PAREN, ')'),
+  new Token(RPAREN, ')'),
 ]);

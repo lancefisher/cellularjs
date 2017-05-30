@@ -7,7 +7,6 @@ import { tokenize } from './tokenizer';
 
 function interpret(cmd) {
   const tokens = tokenize(cmd);
-
   return tokens;
 }
 
