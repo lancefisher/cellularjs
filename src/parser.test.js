@@ -34,3 +34,13 @@ it('lookAhead 1 returns next token', () => {
 
   expect(lookAhead0Token).toEqual(expectedToken);
 });
+
+it('returns EOF when end of tokens is reached', () => {
+  const expressionString = '1 + 3';
+  const parser = new Parser(expressionString);
+
+  expect(parser.consume()).toEqual(new Token(TokenTypes.NUMBER, '1'));
+  expect(parser.consume()).toEqual(new Token(TokenTypes.PLUS, '+'));
+  expect(parser.consume()).toEqual(new Token(TokenTypes.NUMBER, '3'));
+  expect(parser.consume()).toEqual(new Token(TokenTypes.EOF));
+});

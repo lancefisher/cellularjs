@@ -12,7 +12,7 @@ class Parser {
   // returns the next token
   consume() {
     this.currentIndex += 1;
-    if (this.currentIndex > this.tokens.length) {
+    if (this.currentIndex >= this.tokens.length) {
       throw new Error('Cannot cosume. Index exceeds tokens length.');
     }
     const token = this.tokens[this.currentIndex];
