@@ -7,7 +7,7 @@ const TokenTypes = {
   COMMA: Symbol('COMMA'),
   NUMBER: Symbol('NUMBER'),
   PLUS: Symbol('PLUS'),
-  MULTIPLY: Symbol('MULTIPLY'),
+  TIMES: Symbol('TIMES'),
   EOF: Symbol('EOF'),
 };
 
@@ -62,7 +62,7 @@ function tokenize(input) {
     }
 
     if (char === '*') {
-      tokens.push(new Token(TokenTypes.MULTIPLY, '*'));
+      tokens.push(new Token(TokenTypes.TIMES, '*'));
       current += 1;
       continue;
     }

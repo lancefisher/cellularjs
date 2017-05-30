@@ -114,7 +114,7 @@ tokensShouldBe('1 + 2', [
 
 tokensShouldBe('1 * 2', [
   new Token(TokenTypes.NUMBER, '1'),
-  new Token(TokenTypes.MULTIPLY, '*'),
+  new Token(TokenTypes.TIMES, '*'),
   new Token(TokenTypes.NUMBER, '2'),
   new Token(TokenTypes.EOF),
 ]);
