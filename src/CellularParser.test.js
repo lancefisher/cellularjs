@@ -20,9 +20,7 @@ shouldParseAs.only = (input, expected) => {
   shouldParseAs(input, expected, true);
 };
 
-it('should do something', () => {});
-
-shouldParseAs.only('1 + 2 * 3',
+shouldParseAs('1 + 2 * 3',
   new OperatorExpression(
     new NumberExpression('1'),
     TokenTypes.PLUS,
@@ -46,6 +44,7 @@ shouldParseAs('1 * 2 + 3',
   ),
 );
 
+// todo: paren grouping
 // shouldParseAs('1 * (2 + 3)',
 //   new OperatorExpression(
 //     new NumberExpression('1'),
