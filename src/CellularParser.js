@@ -1,4 +1,4 @@
-import Parser from './Parser1';
+import Parser from './Parser';
 import TokenTypes from './TokenTypes';
 import NumberParselet from './parselets/NumberParselet';
 import BinaryOperatorParselet from './parselets/BinaryOperatorParselet';

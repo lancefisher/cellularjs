@@ -1,4 +1,4 @@
-import Parser from './Parser1';
+import Parser from './Parser';
 
 import {
   Token,
