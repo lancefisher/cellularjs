@@ -14,7 +14,11 @@ export default class CellularParser extends Parser {
 
     this.registerPrefixParselet(TokenTypes.NUMBER, new NumberParselet());
 
-    this.registerInfixParselet(TokenTypes.PLUS, new BinaryOperatorParselet(Precedence.SUM));
-    this.registerInfixParselet(TokenTypes.TIMES, new BinaryOperatorParselet(Precedence.PRODUCT));
+    this.infix(TokenTypes.PLUS, Precedence.SUM);
+    this.infix(TokenTypes.TIMES, Precedence.PRODUCT);
+  }
+
+  infix(tokenType, precedence) {
+    this.registerInfixParselet(tokenType, new BinaryOperatorParselet(precedence));
   }
 }
