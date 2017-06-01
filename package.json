@@ -11,7 +11,8 @@
     "repl": "babel-node src/repl",
     "lint": "eslint src",
     "present": "cp .vscode/settings.present.json .vscode/settings.json",
-    "unpresent": "rm .vscode/settings.json"
+    "unpresent": "rm .vscode/settings.json",
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

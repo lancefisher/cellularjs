@@ -9,7 +9,8 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'cellular.js',
+    libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist')
   }
 };
