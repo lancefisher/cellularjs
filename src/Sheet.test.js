@@ -22,5 +22,4 @@ it('should display when toString() is called', () => {
     'A2: =A1 + 2 => null',
     'A3: =A2 + 3 * 4 => null',
   ].join('\n'));
-
 });
