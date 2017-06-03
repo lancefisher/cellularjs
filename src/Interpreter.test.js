@@ -21,3 +21,12 @@ it('should multiply two numbers', () => {
   const output = interpreter.eval('2 * 3');
   expect(output).toBe(6);
 });
+
+it('should multiply and add', () => {
+  const sheet = new Sheet();
+  const interpreter = new Interpreter(sheet);
+  const output1 = interpreter.eval('1 + 2 * 3');
+  expect(output1).toBe(7);
+  const output2 = interpreter.eval('2 * 3 + 1');
+  expect(output2).toBe(7);
+});
