@@ -2,6 +2,7 @@ import CellularParser from './CellularParser';
 
 import OperatorExpression from './expressions/OperatorExpression';
 import NumberExpression from './expressions/NumberExpression';
+import NameExpression from './expressions/NameExpression';
 
 import {
   TokenTypes,
@@ -41,6 +42,14 @@ shouldParseAs('1 * 2 + 3',
     ),
     TokenTypes.PLUS,
     new NumberExpression('3'),
+  ),
+);
+
+shouldParseAs('A1 + 2',
+  new OperatorExpression(
+    new NameExpression('A1'),
+    TokenTypes.PLUS,
+    new NumberExpression('2'),
   ),
 );
 

@@ -31,3 +31,13 @@ it.only('should calculate cell values', () => {
   sheet.calculate();
   expect(a1.value).toBe(3);
 });
+
+it.only('should lookup cell values', () => {
+  const sheet = new Sheet();
+  const a1 = sheet.getCell('A1');
+  a1.text = '=11';
+  const b1 = sheet.getCell('B1');
+  b1.text = '=A1 + 22';
+  sheet.calculate();
+  expect(b1.value).toBe(33);
+});
