@@ -1,8 +1,10 @@
 import Cell from './Cell';
+import Interpreter from './Interpreter';
 
 export default class Sheet {
   constructor() {
     this.cells = new Map();
+    this.interpreter = new Interpreter(this);
   }
 
   getCell(id) {
@@ -13,7 +15,8 @@ export default class Sheet {
   }
 
   calculate() {
-    // todo process the sheet here
+    const interpreter = new Interpreter(this);
+    this.cells.forEach(cell => cell.eval(interpreter));
   }
 
   toString() {

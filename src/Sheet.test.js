@@ -23,3 +23,11 @@ it('should display when toString() is called', () => {
     'A3: =A2 + 3 * 4 => null',
   ].join('\n'));
 });
+
+it.only('should calculate cell values', () => {
+  const sheet = new Sheet();
+  const a1 = sheet.getCell('A1');
+  a1.text = '=1 + 2';
+  sheet.calculate();
+  expect(a1.value).toBe(3);
+});
