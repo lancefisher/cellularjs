@@ -8,9 +8,16 @@ it('should parse a number', () => {
   expect(output).toBe(12);
 });
 
-it.only('should add two numbers', () => {
+it('should add two numbers', () => {
   const sheet = new Sheet();
   const interpreter = new Interpreter(sheet);
   const output = interpreter.eval('1 + 2');
   expect(output).toBe(3);
+});
+
+it('should multiply two numbers', () => {
+  const sheet = new Sheet();
+  const interpreter = new Interpreter(sheet);
+  const output = interpreter.eval('2 * 3');
+  expect(output).toBe(6);
 });

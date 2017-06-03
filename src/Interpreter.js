@@ -20,10 +20,15 @@ export default class Interpreter {
     }
 
     if (node instanceof OperatorExpression) {
+      const left = this.evalAst(node.left);
+      const right = this.evalAst(node.right);
+
       if (node.operator === TokenTypes.PLUS) {
-        const left = this.evalAst(node.left);
-        const right = this.evalAst(node.right);
         return left + right;
+      }
+
+      if (node.operator === TokenTypes.TIMES) {
+        return left * right;
       }
     }
 
