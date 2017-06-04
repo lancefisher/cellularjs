@@ -40,4 +40,32 @@ export default class Interpreter {
 
     throw new TypeError('Could not intrepret expression: ', node);
   }
+
+  getRefs(expression) {
+    const parser = new CellularParser(expression);
+    const ast = parser.parseExpression();
+    const refs = [];
+    this.evalRefs(ast, refs);
+    return refs;
+  }
+
+  // Walk the AST, and collect references in refs
+  evalRefs(node, refs = []) {
+    if (node instanceof NumberExpression) {
+      return;
+    }
+
+    if (node instanceof NameExpression) {
+      refs.push(node.name);
+      return;
+    }
+
+    if (node instanceof OperatorExpression) {
+      this.evalRefs(node.left, refs);
+      this.evalRefs(node.right, refs);
+      return;
+    }
+
+    throw new TypeError('Could not intrepret expression: ', node);
+  }
 }

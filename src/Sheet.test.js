@@ -41,3 +41,16 @@ it('should lookup cell values', () => {
   sheet.calculate();
   expect(b1.value).toBe(33);
 });
+
+it('should resolve references', () => {
+  const sheet = new Sheet();
+  sheet.getCell('A1').text = '=1';
+  sheet.getCell('A2').text = '=2';
+  sheet.getCell('B1').text = '=A1 + A2';
+  sheet.getCell('C1').text = '=B1';
+
+  sheet.resolveReferences();
+  expect(sheet.getCell('A1').refs).toEqual([]);
+  expect(sheet.getCell('B1').refs).toEqual(['A1', 'A2']);
+  expect(sheet.getCell('C1').refs).toEqual(['B1']);
+});

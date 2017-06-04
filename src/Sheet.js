@@ -15,14 +15,17 @@ export default class Sheet {
   }
 
   calculate() {
-    const interpreter = new Interpreter(this);
-    this.cells.forEach(cell => cell.eval(interpreter));
+    this.cells.forEach(cell => cell.eval(this.interpreter));
+  }
+
+  resolveReferences() {
+    this.cells.forEach(cell => cell.resolveReferences(this.interpreter));
   }
 
   toString() {
     const lines = [];
     this.cells.forEach(cell => lines.push(
-      `${cell.id}: ${cell.text} => ${cell.value}`
+      `${cell.id}: ${cell.text} => ${cell.value}`,
     ));
     return lines.join('\n');
   }
