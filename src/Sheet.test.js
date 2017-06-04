@@ -1,30 +1,30 @@
 import Sheet from './Sheet';
 
-xit('should process a sheet', () => {
+it('should process a sheet', () => {
   const sheet = new Sheet();
-  sheet.getCell('A1').text = '1';
+  sheet.getCell('A1').text = '=1';
   sheet.getCell('A2').text = '=A1 + 2';
   sheet.getCell('A3').text = '=A2 + 3 * 4';
   sheet.calculate();
-  const cell = sheet.getCell('A3');
-  expect(cell.value).toBe(15);
+  const a3 = sheet.getCell('A3');
+  expect(a3.value).toBe(15);
 });
 
 it('should display when toString() is called', () => {
   const sheet = new Sheet();
-  sheet.getCell('A1').text = '1';
+  sheet.getCell('A1').text = '=1';
   sheet.getCell('A2').text = '=A1 + 2';
   sheet.getCell('A3').text = '=A2 + 3 * 4';
   sheet.calculate();
   const output = sheet.toString();
   expect(output).toBe([
-    'A1: 1 => null',
-    'A2: =A1 + 2 => null',
-    'A3: =A2 + 3 * 4 => null',
+    'A1: =1 => 1',
+    'A2: =A1 + 2 => 3',
+    'A3: =A2 + 3 * 4 => 15',
   ].join('\n'));
 });
 
-it.only('should calculate cell values', () => {
+it('should calculate cell values', () => {
   const sheet = new Sheet();
   const a1 = sheet.getCell('A1');
   a1.text = '=1 + 2';
@@ -32,7 +32,7 @@ it.only('should calculate cell values', () => {
   expect(a1.value).toBe(3);
 });
 
-it.only('should lookup cell values', () => {
+it('should lookup cell values', () => {
   const sheet = new Sheet();
   const a1 = sheet.getCell('A1');
   a1.text = '=11';
