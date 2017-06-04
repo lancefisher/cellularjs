@@ -15,7 +15,8 @@ export default class Sheet {
   }
 
   calculate() {
-    this.cells.forEach(cell => cell.eval(this.interpreter));
+    const evalOrder = this.getEvalOrder();
+    evalOrder.forEach(key => this.cells.get(key).eval(this.interpreter));
   }
 
   resolveReferences() {
