@@ -54,3 +54,16 @@ it('should resolve references', () => {
   expect(sheet.getCell('B1').refs).toEqual(['A1', 'A2']);
   expect(sheet.getCell('C1').refs).toEqual(['B1']);
 });
+
+it('should determine eval order', () => {
+  const sheet = new Sheet();
+  sheet.getCell('A1').text = '=1';
+  sheet.getCell('B1').text = '=C1 + C2';
+  sheet.getCell('C1').text = '=B1';
+  sheet.getCell('C2').text = '=A1';
+
+  const evalOrder = sheet.getEvalOrder();
+  expect(evalOrder).toEqual([
+    'A1', 'C1', 'C2', 'B1',
+  ]);
+});
