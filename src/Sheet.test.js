@@ -82,3 +82,17 @@ it('should calculate using eval order', () => {
   expect(sheet.getCell('C2').value).toBe(2);
   expect(sheet.getCell('B1').value).toBe(3);
 });
+
+it('should eval literal strings as numbers', () => {
+  const sheet = new Sheet();
+  sheet.getCell('A1').text = '123';
+  sheet.calculate();
+  expect(sheet.getCell('A1').value).toBe(123);
+});
+
+it.only('should eval literal numbers as numbers', () => {
+  const sheet = new Sheet();
+  sheet.getCell('A1').text = 123;
+  sheet.calculate();
+  expect(sheet.getCell('A1').value).toBe(123);
+});

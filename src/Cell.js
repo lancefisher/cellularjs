@@ -7,17 +7,26 @@ export default class Cell {
   }
 
   eval(interpreter) {
-    // for now just assume it starts with an =
-    const text = this.text;
-    const expression = text.slice(1, text.length);
-    const value = interpreter.eval(expression);
-    this.value = value;
+    if (this.isLiteral()) {
+      this.value = Number(this.text);
+    } else {
+      const expression = this.text.slice(1, this.text.length);
+      const value = interpreter.eval(expression);
+      this.value = value;
+    }
   }
 
   resolveReferences(interpreter) {
-    // for now just assume it starts with an =
+    if (this.isLiteral) return;
+
     const text = this.text;
     const expression = text.slice(1, text.length);
     this.refs = interpreter.getRefs(expression);
+  }
+
+  isLiteral() {
+    if (typeof this.text === 'number') return true;
+    if (this.text[0] !== '=') return true;
+    return false;
   }
 }
