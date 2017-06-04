@@ -50,8 +50,6 @@ export default class Sheet {
     return order;
   }
 
-
-
   toString() {
     const lines = [];
     this.cells.forEach(cell => lines.push(
