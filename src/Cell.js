@@ -17,7 +17,7 @@ export default class Cell {
   }
 
   resolveReferences(interpreter) {
-    if (this.isLiteral) return;
+    if (this.isLiteral()) return;
 
     const text = this.text;
     const expression = text.slice(1, text.length);

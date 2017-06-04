@@ -83,6 +83,19 @@ it('should calculate using eval order', () => {
   expect(sheet.getCell('B1').value).toBe(3);
 });
 
+it('should get eval order entered out of order', () => {
+  const sheet = new Sheet();
+  sheet.getCell('A1').text = '=1';
+  sheet.getCell('A2').text = '=2';
+  sheet.getCell('B1').text = '=A1 + A2 * A3';
+  sheet.getCell('A3').text = '=3';
+
+  const evalOrder = sheet.getEvalOrder();
+  expect(evalOrder).toEqual([
+    'A1', 'A2', 'A3', 'B1',
+  ]);
+});
+
 it('should eval literal strings as numbers', () => {
   const sheet = new Sheet();
   sheet.getCell('A1').text = '123';
@@ -90,7 +103,7 @@ it('should eval literal strings as numbers', () => {
   expect(sheet.getCell('A1').value).toBe(123);
 });
 
-it.only('should eval literal numbers as numbers', () => {
+it('should eval literal numbers as numbers', () => {
   const sheet = new Sheet();
   sheet.getCell('A1').text = 123;
   sheet.calculate();

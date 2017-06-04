@@ -18,11 +18,12 @@ function interpret(cmd) {
   // const parser = new CellularParser(cmd);
   // const expression = parser.parseExpression();
   // return expression;
+  let output = '';
   if (cmd.indexOf('sheet.') === 0) {
-    eval(cmd); // eslint-disable-line no-eval
+    output = eval(cmd); // eslint-disable-line no-eval
   }
 
-  return printSheet();
+  return `${chalk.red(output)}\n${printSheet()}`;
 }
 
 function evaluate(cmd, context, filename, callback) {
