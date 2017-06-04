@@ -1,3 +1,6 @@
+
+<img src="https://rawgit.com/lancefisher/cellular/master/images/svg/cellular-logo.svg">
+
 Cellular
 =========
 
