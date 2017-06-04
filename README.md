@@ -1,7 +1,7 @@
 Cellular
 =========
 
-Let's build a spreadsheet!
+The JavaScript spreadshseet engine.
 
 ## Tokenizer
 
