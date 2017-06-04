@@ -17,6 +17,8 @@ sheet.getCell('B1').value;
 // 7
 ```
 
+**Try it now on [RunKit](https://runkit.com/lancefisher/5933d148c6bf7b00127f873c)**
+
 ## REPL
 
 A REPL is included. It creates a sheet when you run it.
