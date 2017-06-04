@@ -1,9 +1,14 @@
 {
-  "name": "cellular",
-  "version": "1.0.0",
-  "main": "src/repl.js",
-  "repository": {},
-  "author": "Lance Fisher <lance@submittable.com>",
+  "name": "cellularjs",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "keywords": [
+    "spreadsheet"
+  ],
+  "repository": {
+    "url": "https://github.com/lancefisher/cellularjs"
+  },
+  "author": "Lance Fisher <lance@fisher.io>",
   "license": "MIT",
   "scripts": {
     "test": "jest --watch",
