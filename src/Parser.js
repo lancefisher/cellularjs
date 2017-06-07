@@ -13,7 +13,7 @@ export default class Parser {
     // fn(parser, leftExpression, rightToken) returns expression
     this.infixParseFns = new Map();
     // maps token type to precendence
-    this.precedenceFromTokenType = new Map();
+    this.tokenTypeToPrecedence = new Map();
   }
 
   // returns the next token
@@ -35,21 +35,9 @@ export default class Parser {
     return this.tokens[i];
   }
 
-  registerPrefixParseFn(tokenType, fn) {
-    this.prefixParseFns.set(tokenType, fn);
-  }
-
-  registerInfixParseFn(tokenType, fn) {
-    this.infixParseFns.set(tokenType, fn);
-  }
-
-  setPrecedence(tokenType, precedence) {
-    this.precedenceFromTokenType.set(tokenType, precedence);
-  }
-
   getPrecedence() {
     const token = this.lookAhead(0);
-    const precedence = this.precedenceFromTokenType.get(token.type);
+    const precedence = this.tokenTypeToPrecedence.get(token.type);
     return precedence || 0;
   }
 
