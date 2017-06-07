@@ -1,8 +1,9 @@
 import CellularParser from './CellularParser';
-
-import OperatorExpression from './expressions/OperatorExpression';
-import NumberExpression from './expressions/NumberExpression';
-import NameExpression from './expressions/NameExpression';
+import {
+  OperatorExpression,
+  NameExpression,
+  NumberExpression,
+} from './expressions';
 
 import {
   TokenTypes,
