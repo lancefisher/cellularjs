@@ -1,26 +1,49 @@
 import Parser from './Parser';
 import TokenTypes from './TokenTypes';
-import NumberParselet from './parselets/NumberParselet';
-import NameParselet from './parselets/NameParselet';
-import BinaryOperatorParselet from './parselets/BinaryOperatorParselet';
+import {
+  OperatorExpression,
+  NameExpression,
+  NumberExpression,
+} from './expressions';
 
-const Precedence = {
-  SUM: 1,
-  PRODUCT: 2,
-};
+/**
+ * Infix Parse Functions. Each should have a signature as:
+ * fn(parser, leftExpression, rightToken) returns expression
+ */
+
+function parseBinaryOperator(parser, leftExpression, rightToken) {
+  const precedence = parser.precedenceFromTokenType.get(rightToken.type);
+  const rightExpression = parser.parseExpression(precedence);
+  return new OperatorExpression(leftExpression, rightToken.type, rightExpression);
+}
+
+/**
+ * Prefix Parse Functions. Each should have a signature as:
+ * fn(parser, leftToken) returns expression
+ */
+
+function parseName(parser, leftToken) {
+  return new NameExpression(leftToken.value);
+}
+
+function parseNumber(parser, leftToken) {
+  const num = Number(leftToken.value);
+  return new NumberExpression(num);
+}
 
 export default class CellularParser extends Parser {
   constructor(expressionString) {
     super(expressionString);
 
-    this.registerPrefixParselet(TokenTypes.NUMBER, new NumberParselet());
-    this.registerPrefixParselet(TokenTypes.NAME, new NameParselet());
+    this.registerPrefixParseFn(TokenTypes.NUMBER, parseNumber);
+    this.registerPrefixParseFn(TokenTypes.NAME, parseName);
 
-    this.infix(TokenTypes.PLUS, Precedence.SUM);
-    this.infix(TokenTypes.TIMES, Precedence.PRODUCT);
+    this.registerInfixParseFn(TokenTypes.PLUS, parseBinaryOperator);
+    this.registerInfixParseFn(TokenTypes.TIMES, parseBinaryOperator);
+
+    this.setPrecedence(TokenTypes.PLUS, 1);
+    this.setPrecedence(TokenTypes.TIMES, 2);
   }
 
-  infix(tokenType, precedence) {
-    this.registerInfixParselet(tokenType, new BinaryOperatorParselet(precedence));
-  }
 }
+

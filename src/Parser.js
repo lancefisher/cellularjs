@@ -6,11 +6,14 @@ export default class Parser {
   constructor(expressionString) {
     this.expressionString = expressionString;
     this.tokens = tokenize(this.expressionString);
-
     this.currentIndex = 0;
 
-    this.prefixParselets = new Map();
-    this.infixParselets = new Map();
+    // fn(parser, leftToken) returns expression
+    this.prefixParseFns = new Map();
+    // fn(parser, leftExpression, rightToken) returns expression
+    this.infixParseFns = new Map();
+    // maps token type to precendence
+    this.precedenceFromTokenType = new Map();
   }
 
   // returns the next token
@@ -32,34 +35,40 @@ export default class Parser {
     return this.tokens[i];
   }
 
-  registerPrefixParselet(tokenType, parselet) {
-    this.prefixParselets.set(tokenType, parselet);
+  registerPrefixParseFn(tokenType, fn) {
+    this.prefixParseFns.set(tokenType, fn);
   }
 
-  registerInfixParselet(tokenType, parselet) {
-    this.infixParselets.set(tokenType, parselet);
+  registerInfixParseFn(tokenType, fn) {
+    this.infixParseFns.set(tokenType, fn);
+  }
+
+  setPrecedence(tokenType, precedence) {
+    this.precedenceFromTokenType.set(tokenType, precedence);
   }
 
   getPrecedence() {
     const token = this.lookAhead(0);
-    const parselet = this.infixParselets.get(token.type);
-    if (parselet) return parselet.precedence;
-    return 0;
+    const precedence = this.precedenceFromTokenType.get(token.type);
+    return precedence || 0;
   }
 
   parseExpression(precedence = 0) {
     const leftToken = this.consume();
-    const prefixParselet = this.prefixParselets.get(leftToken.type);
-    if (!prefixParselet) {
+    const prefixParseFn = this.prefixParseFns.get(leftToken.type);
+
+    if (!prefixParseFn) {
       throw new TypeError(`Could not parse token of type: ${leftToken.type.toString()}`);
     }
 
-    let leftExpression = prefixParselet.parse(this, leftToken);
+    let leftExpression = prefixParseFn(this, leftToken);
 
+    // precedence < current token's precedence
     while (precedence < this.getPrecedence()) {
       const rightToken = this.consume();
-      const infixParselet = this.infixParselets.get(rightToken.type);
-      leftExpression = infixParselet.parse(this, leftExpression, rightToken);
+      const infixParseFn = this.infixParseFns.get(rightToken.type);
+
+      leftExpression = infixParseFn(this, leftExpression, rightToken);
     }
 
     return leftExpression;
