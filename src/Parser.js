@@ -35,7 +35,7 @@ export default class Parser {
     return this.tokens[i];
   }
 
-  getPrecedence() {
+  peekPrecedence() {
     const token = this.lookAhead(0);
     const precedence = this.tokenTypeToPrecedence.get(token.type);
     return precedence || 0;
@@ -51,8 +51,7 @@ export default class Parser {
 
     let leftExpression = prefixParseFn(this, leftToken);
 
-    // precedence < current token's precedence
-    while (precedence < this.getPrecedence()) {
+    while (precedence < this.peekPrecedence()) {
       const rightToken = this.consume();
       const infixParseFn = this.infixParseFns.get(rightToken.type);
 
