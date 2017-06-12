@@ -1,10 +1,10 @@
-import CellularParser from './CellularParser';
+import CellularParser from "./CellularParser";
 import {
   OperatorExpression,
   NameExpression,
-  NumberExpression,
-} from './expressions';
-import TokenTypes from './TokenTypes';
+  NumberExpression
+} from "./expressions";
+import TokenTypes from "./TokenTypes";
 
 export default class Interpreter {
   constructor(sheet) {
@@ -35,12 +35,20 @@ export default class Interpreter {
         return left + right;
       }
 
+      if (node.operator === TokenTypes.MINUS) {
+        return left - right;
+      }
+
       if (node.operator === TokenTypes.TIMES) {
         return left * right;
       }
+
+      if (node.operator === TokenTypes.DIVIDE) {
+        return left / right;
+      }
     }
 
-    throw new TypeError('Could not intrepret expression: ', node);
+    throw new TypeError("Could not intrepret expression: ", node);
   }
 
   getRefs(expression) {
@@ -68,6 +76,6 @@ export default class Interpreter {
       return;
     }
 
-    throw new TypeError('Could not intrepret expression: ', node);
+    throw new TypeError("Could not intrepret expression: ", node);
   }
 }
