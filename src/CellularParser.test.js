@@ -1,11 +1,11 @@
-import CellularParser from "./CellularParser";
+import CellularParser from './CellularParser';
 import {
   OperatorExpression,
   NameExpression,
-  NumberExpression
-} from "./expressions";
+  NumberExpression,
+} from './expressions';
 
-import { TokenTypes } from "./tokenizer";
+import { TokenTypes } from './tokenizer';
 
 function shouldParseAs(expressionString, expected, only = false) {
   const itFn = only ? it.only : it;
@@ -21,69 +21,69 @@ shouldParseAs.only = (input, expected) => {
 };
 
 shouldParseAs(
-  "1 + 2 * 3",
+  '1 + 2 * 3',
   new OperatorExpression(
-    new NumberExpression("1"),
+    new NumberExpression('1'),
     TokenTypes.PLUS,
     new OperatorExpression(
-      new NumberExpression("2"),
+      new NumberExpression('2'),
       TokenTypes.TIMES,
-      new NumberExpression("3")
-    )
-  )
+      new NumberExpression('3'),
+    ),
+  ),
 );
 
 shouldParseAs(
-  "1 * 2 + 3",
+  '1 * 2 + 3',
   new OperatorExpression(
     new OperatorExpression(
-      new NumberExpression("1"),
+      new NumberExpression('1'),
       TokenTypes.TIMES,
-      new NumberExpression("2")
+      new NumberExpression('2'),
     ),
     TokenTypes.PLUS,
-    new NumberExpression("3")
-  )
+    new NumberExpression('3'),
+  ),
 );
 
 shouldParseAs(
-  "A1 + 2",
+  'A1 + 2',
   new OperatorExpression(
-    new NameExpression("A1"),
+    new NameExpression('A1'),
     TokenTypes.PLUS,
-    new NumberExpression("2")
-  )
+    new NumberExpression('2'),
+  ),
 );
 
 shouldParseAs(
-  "2 - 1",
+  '2 - 1',
   new OperatorExpression(
-    new NumberExpression("2"),
+    new NumberExpression('2'),
     TokenTypes.MINUS,
-    new NumberExpression("1")
-  )
+    new NumberExpression('1'),
+  ),
 );
 
 shouldParseAs(
-  "1 * 2 - 3",
+  '1 * 2 - 3',
   new OperatorExpression(
     new OperatorExpression(
-      new NumberExpression("1"),
+      new NumberExpression('1'),
       TokenTypes.TIMES,
-      new NumberExpression("2")
+      new NumberExpression('2'),
     ),
     TokenTypes.MINUS,
-    new NumberExpression("3")
-  )
+    new NumberExpression('3'),
+  ),
 );
 
 shouldParseAs(
-  "2 / 1",
+  '2 / 1',
   new OperatorExpression(
-    new NumberExpression("2"),
+    new NumberExpression('2'),
     TokenTypes.DIVIDE,
-    new NumberExpression("1")
-  )
+    new NumberExpression('1'),
+  ),
 );
 
 // todo: paren grouping

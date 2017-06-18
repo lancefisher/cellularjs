@@ -1,0 +1,574 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"fa",
+				"fadeOut"
+			],
+			[
+				"paddn",
+				"padding-left"
+			],
+			[
+				"o",
+				"opacity"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"new",
+				"newItem"
+			],
+			[
+				"t",
+				"text"
+			],
+			[
+				"th",
+				"third"
+			],
+			[
+				"re",
+				"resetBuild"
+			],
+			[
+				"mode",
+				"modeButtons"
+			],
+			[
+				"mo",
+				"modeButtons"
+			],
+			[
+				"q",
+				"querySelectorAll"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"s",
+				"squares"
+			],
+			[
+				"c",
+				"click"
+			],
+			[
+				"co",
+				"colors"
+			],
+			[
+				"cli",
+				"click"
+			],
+			[
+				"pick",
+				"pickNewColor"
+			],
+			[
+				"me",
+				"messageDisplay"
+			],
+			[
+				"clicked",
+				"clickedColor"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"con",
+				"textContent"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"p2",
+				"p2score"
+			],
+			[
+				"p1",
+				"p1score"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"b",
+				"buttons"
+			],
+			[
+				"qu",
+				"querySelector"
+			],
+			[
+				"ge",
+				"getElementByClassName"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"ha",
+				"haveWatched"
+			],
+			[
+				"m",
+				"moviesDB"
+			],
+			[
+				"list",
+				"listToDo"
+			],
+			[
+				"to",
+				"todos"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fo",
+				"forEach"
+			],
+			[
+				"i",
+				"input"
+			],
+			[
+				"guess",
+				"guesser"
+			],
+			[
+				"gu",
+				"guesser"
+			],
+			[
+				"first",
+				"firstName"
+			],
+			[
+				"tex",
+				"text-shadow"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"ta",
+				"text-align"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"bott",
+				"border-bottom"
+			],
+			[
+				"top",
+				"border-top"
+			],
+			[
+				"ri",
+				"border-right"
+			],
+			[
+				"lef",
+				"border-left"
+			],
+			[
+				"border-c",
+				"border-collapse"
+			],
+			[
+				"bo",
+				"border-bottom"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"f",
+				"font-family"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"td",
+				"text-decoration"
+			],
+			[
+				"bc",
+				"background-color"
+			],
+			[
+				"min",
+				"minlength\tAttr"
+			],
+			[
+				"la",
+				"lastName"
+			],
+			[
+				"term",
+				"termsAndCond"
+			],
+			[
+				"pa",
+				"password"
+			],
+			[
+				"e",
+				"email"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"poop",
+			"1 + 1",
+			"poop();",
+			"poop()",
+			"poop"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/willwhitworth/Viking_Immersive_March/test_driven/assignment_test_driven_diary/javascript/leap/leap.js",
+		"/Users/willwhitworth/Downloads/redis-3.2.8/README.md",
+		"/Users/willwhitworth/Viking_Immersive_March/good_evil/assignment_css_garden_of_good_and_evil/README.md",
+		"/Users/willwhitworth/Viking_Immersive_March/kingdom_assign/assignment_digital_kingdom/README.md",
+		"/Users/willwhitworth/Viking_Immersive_March/first_build/project_github_commit_feed/README.md",
+		"/Users/willwhitworth/Viking_Immersive_March/assignment_building_the_express_router/app.js",
+		"/Users/willwhitworth/Viking_Immersive_March/assignment_building_the_express_router/lib/router.js",
+		"/Users/willwhitworth/Viking_Immersive_March/assignment_building_the_express_router/routes.js",
+		"/Users/willwhitworth/Viking_Advanced_Prep/build_a_node_server/assignment_build_a_nodejs_server/app.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/photoGal/photoGal.html",
+		"/Users/willwhitworth/Viking_Immersive_March/ass_node_dict_reader/assignment_node_dictionary_reader/README.md",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/AdHocApp/adHocApp.html",
+		"/Users/willwhitworth/Viking_Immersive_March/assign_9_advanced_node/assignment_node_as_a_command_line_tool/README.md",
+		"/Users/willwhitworth/Viking_Advanced_Prep/github_api/assignment_githuh/app.js",
+		"/Users/willwhitworth/Viking_Advanced_Prep/hello/index.js",
+		"/Users/willwhitworth/Viking_Advanced_Prep/hello/package.json",
+		"/Users/willwhitworth/Viking_Advanced_Prep/build_async/assignment_async_nodejs/README.md",
+		"/Users/willwhitworth/Viking_Advanced_Prep/build_a_node_server/assignment_build_a_nodejs_server/README.md",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/paper-full.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/howler.js",
+		"/Users/willwhitworth/Viking_Advanced_Prep/prep_dynamic_jQuery/assignment_jq_ee_sprint/photoTagging/style.css",
+		"/Users/willwhitworth/Viking_Advanced_Prep/prep_dynamic_jQuery/assignment_jq_ee_sprint/style.css",
+		"/Users/willwhitworth/Viking_Advanced_Prep/music_player/assignment_royalty_free_music_player/README.md",
+		"/Users/willwhitworth/prep_dynamic_jQuery/assignment_jq_ee_sprint/script.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/toDoList/assets/js/javaScript.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/jQueryExercise/exercise.js",
+		"/Users/willwhitworth/prep_dynamic_jQuery/assignment_jq_ee_sprint/README.md",
+		"/Users/willwhitworth/tetsss/pairing_checkin/README.md",
+		"/Users/willwhitworth/bootstrap_viking/assignment_bootstrap_sprint/README.md",
+		"/Users/willwhitworth/prep_facebook/project_prep_facebook_pages/README.md",
+		"/Users/willwhitworth/warm_markup_viking/assignment_markup_warmup/README.md",
+		"/Users/willwhitworth/Viking_CSS_GARDEN/assignment_viking_css_garden/README.md",
+		"/Users/willwhitworth/HTML_Resume/assignment_html_resume/README.md",
+		"/Users/willwhitworth/HTML_Viking/assignment_html_resume/index.html",
+		"/Users/willwhitworth/please_work/assignment_html_resume/README.md",
+		"/Users/willwhitworth/HTML_Viking/assignment_html_resume/README.md",
+		"/Users/willwhitworth/test/pair_exercise/pairing_checkin/README.md",
+		"/Users/willwhitworth/test/prep_basics/test-yourself-answers.md",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/StartUpLanding/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/30 days of Vanilla JS/day01/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/30 days of Vanilla JS/day01/day01.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/HerdOfWy/indexCSS.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/HerdOfWy/index.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/jsDemo/javaScriptDemo.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/toDoList/index.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/imageGal/imageGal.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/HerdOfWy/waysToHelp.html",
+		"/Users/willwhitworth/Desktop/HackerRank starter code.rtf",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/index.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/toDoList/assets/css/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/assets/js/script.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/patatapClone/assets/js/lib/paper-full.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/toDoList/assets/js/lib/font-awesome.min.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/toDoList/assets/js/lib/jquery-3.1.1.min.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/jQueryExercise/exercise.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/countingExe/script.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/countingExe/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/countingExe/countingExe.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/jsDemo/javascript.js",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/jsDemo/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/StartUpLanding/landing.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/imageGal/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/bootstrapBasics/bootstrapBasics.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/bootstrapGridSystem/gridSystem.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/blogExe/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/blogExe/blogExe.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/photoGal/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/boxModel/box.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/boxModel/boxModel.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/firstCss/todos.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/firstCss/aboutMe.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/introCssQuiz/selectorsExercise.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/introCssQuiz/selectors.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/firstCss/style.css",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/rustyQuiz/rusty.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/firstPage/page2.html",
+		"/Users/willwhitworth/Desktop/WebDev BootCamp/firstPage/firstPage.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"easy",
+			"col-lg-4",
+			"col"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Cell.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 173.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

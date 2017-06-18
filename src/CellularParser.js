@@ -1,10 +1,10 @@
-import Parser from "./Parser";
-import TokenTypes from "./TokenTypes";
+import Parser from './Parser';
+import TokenTypes from './TokenTypes';
 import {
   OperatorExpression,
   NameExpression,
-  NumberExpression
-} from "./expressions";
+  NumberExpression,
+} from './expressions';
 
 /**
  * Infix Parse Functions. Each should have a signature as:
@@ -17,7 +17,7 @@ function parseBinaryOperator(parser, leftExpression, rightToken) {
   return new OperatorExpression(
     leftExpression,
     rightToken.type,
-    rightExpression
+    rightExpression,
   );
 }
 

@@ -1,4 +1,4 @@
-import TokenTypes from "./TokenTypes";
+import TokenTypes from './TokenTypes';
 
 class Token {
   constructor(type, value) {
@@ -14,14 +14,14 @@ function tokenize(input) {
   while (current < input.length) {
     let char = input[current];
 
-    if (char === "(") {
-      tokens.push(new Token(TokenTypes.LPAREN, "("));
+    if (char === '(') {
+      tokens.push(new Token(TokenTypes.LPAREN, '('));
       current += 1;
       continue;
     }
 
-    if (char === ")") {
-      tokens.push(new Token(TokenTypes.RPAREN, ")"));
+    if (char === ')') {
+      tokens.push(new Token(TokenTypes.RPAREN, ')'));
       current += 1;
       continue;
     }
@@ -32,36 +32,36 @@ function tokenize(input) {
       continue;
     }
 
-    if (char === ":") {
-      tokens.push(new Token(TokenTypes.COLON, ":"));
+    if (char === ':') {
+      tokens.push(new Token(TokenTypes.COLON, ':'));
       current += 1;
       continue;
     }
 
-    if (char === ",") {
-      tokens.push(new Token(TokenTypes.COMMA, ","));
+    if (char === ',') {
+      tokens.push(new Token(TokenTypes.COMMA, ','));
       current += 1;
       continue;
     }
 
-    if (char === "+") {
-      tokens.push(new Token(TokenTypes.PLUS, "+"));
+    if (char === '+') {
+      tokens.push(new Token(TokenTypes.PLUS, '+'));
       current += 1;
       continue;
     }
-    if (char === "-") {
-      tokens.push(new Token(TokenTypes.MINUS, "-"));
+    if (char === '-') {
+      tokens.push(new Token(TokenTypes.MINUS, '-'));
       current += 1;
       continue;
     }
 
-    if (char === "*") {
-      tokens.push(new Token(TokenTypes.TIMES, "*"));
+    if (char === '*') {
+      tokens.push(new Token(TokenTypes.TIMES, '*'));
       current += 1;
       continue;
     }
-    if (char === "/") {
-      tokens.push(new Token(TokenTypes.DIVIDE, "/"));
+    if (char === '/') {
+      tokens.push(new Token(TokenTypes.DIVIDE, '/'));
       current += 1;
       continue;
     }
@@ -84,7 +84,7 @@ function tokenize(input) {
     const ALPHA = /[a-z]/i;
     const ALPHANUM = /[a-z0-9]/i;
     if (ALPHA.test(char)) {
-      let value = "";
+      let value = '';
       while (char !== undefined && ALPHANUM.test(char)) {
         value += char;
         current += 1;
@@ -97,12 +97,12 @@ function tokenize(input) {
     const NUM = /[0-9]/i;
     const NUM_OR_DOT = /[0-9.]/i;
     if (NUM.test(char)) {
-      let value = "";
+      let value = '';
       let foundDot = false;
       while (char !== undefined && NUM_OR_DOT.test(char)) {
-        const isDot = char === ".";
+        const isDot = char === '.';
         if (foundDot && isDot)
-          throw new TypeError("Invalid number format x.x.");
+          throw new TypeError('Invalid number format x.x.');
         if (isDot) foundDot = true;
         value += char;
         current += 1;

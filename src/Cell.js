@@ -25,8 +25,8 @@ export default class Cell {
   }
 
   isLiteral() {
-    if (typeof this.text === "number") return true;
-    if (this.text[0] !== "=") return true;
+    if (typeof this.text === 'number') return true;
+    if (this.text[0] !== '=') return true;
     return false;
   }
 }
