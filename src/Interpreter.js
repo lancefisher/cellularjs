@@ -35,8 +35,16 @@ export default class Interpreter {
         return left + right;
       }
 
+      if (node.operator === TokenTypes.MINUS) {
+        return left - right;
+      }
+
       if (node.operator === TokenTypes.TIMES) {
         return left * right;
+      }
+
+      if (node.operator === TokenTypes.DIVIDE) {
+        return left / right;
       }
     }
 

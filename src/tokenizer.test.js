@@ -1,8 +1,4 @@
-import {
-  tokenize,
-  Token,
-  TokenTypes,
-} from './tokenizer';
+import { tokenize, Token, TokenTypes } from './tokenizer';
 
 function tokensShouldBe(input, expected, only = false) {
   const itFn = only ? it.only : it;
@@ -109,9 +105,23 @@ tokensShouldBe('1 + 2', [
   new Token(TokenTypes.EOF),
 ]);
 
+tokensShouldBe('2 - 1', [
+  new Token(TokenTypes.NUMBER, '2'),
+  new Token(TokenTypes.MINUS, '-'),
+  new Token(TokenTypes.NUMBER, '1'),
+  new Token(TokenTypes.EOF),
+]);
+
 tokensShouldBe('1 * 2', [
   new Token(TokenTypes.NUMBER, '1'),
   new Token(TokenTypes.TIMES, '*'),
+  new Token(TokenTypes.NUMBER, '2'),
+  new Token(TokenTypes.EOF),
+]);
+
+tokensShouldBe('4 / 2', [
+  new Token(TokenTypes.NUMBER, '4'),
+  new Token(TokenTypes.DIVIDE, '/'),
   new Token(TokenTypes.NUMBER, '2'),
   new Token(TokenTypes.EOF),
 ]);

@@ -49,9 +49,19 @@ function tokenize(input) {
       current += 1;
       continue;
     }
+    if (char === '-') {
+      tokens.push(new Token(TokenTypes.MINUS, '-'));
+      current += 1;
+      continue;
+    }
 
     if (char === '*') {
       tokens.push(new Token(TokenTypes.TIMES, '*'));
+      current += 1;
+      continue;
+    }
+    if (char === '/') {
+      tokens.push(new Token(TokenTypes.DIVIDE, '/'));
       current += 1;
       continue;
     }
@@ -59,14 +69,14 @@ function tokenize(input) {
     if (char === '"') {
       let value = '';
       current += 1;
-      char = input[current];  // skip opening "
+      char = input[current]; // skip opening "
       while (char !== '"') {
         value += char;
         current += 1;
         char = input[current];
       }
       current += 1;
-      char = input[current];  // skip closing "
+      char = input[current]; // skip closing "
       tokens.push(new Token(TokenTypes.STRING, value));
       continue;
     }
@@ -89,7 +99,7 @@ function tokenize(input) {
     if (NUM.test(char)) {
       let value = '';
       let foundDot = false;
-      while (char !== undefined && (NUM_OR_DOT.test(char))) {
+      while (char !== undefined && NUM_OR_DOT.test(char)) {
         const isDot = char === '.';
         if (foundDot && isDot) throw new TypeError('Invalid number format x.x.');
         if (isDot) foundDot = true;
@@ -102,7 +112,7 @@ function tokenize(input) {
     }
 
     throw new TypeError(
-        `Unexpected character: ${char} at ${current} in '${input}'`,
+      `Unexpected character: ${char} at ${current} in '${input}'`,
     );
   }
 
@@ -110,8 +120,4 @@ function tokenize(input) {
   return tokens;
 }
 
-export {
-    tokenize,
-    Token,
-    TokenTypes,
-};
+export { tokenize, Token, TokenTypes };

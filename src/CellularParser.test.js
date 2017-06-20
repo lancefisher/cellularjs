@@ -5,9 +5,7 @@ import {
   NumberExpression,
 } from './expressions';
 
-import {
-  TokenTypes,
-} from './tokenizer';
+import { TokenTypes } from './tokenizer';
 
 function shouldParseAs(expressionString, expected, only = false) {
   const itFn = only ? it.only : it;
@@ -22,7 +20,8 @@ shouldParseAs.only = (input, expected) => {
   shouldParseAs(input, expected, true);
 };
 
-shouldParseAs('1 + 2 * 3',
+shouldParseAs(
+  '1 + 2 * 3',
   new OperatorExpression(
     new NumberExpression('1'),
     TokenTypes.PLUS,
@@ -34,7 +33,8 @@ shouldParseAs('1 + 2 * 3',
   ),
 );
 
-shouldParseAs('1 * 2 + 3',
+shouldParseAs(
+  '1 * 2 + 3',
   new OperatorExpression(
     new OperatorExpression(
       new NumberExpression('1'),
@@ -46,11 +46,43 @@ shouldParseAs('1 * 2 + 3',
   ),
 );
 
-shouldParseAs('A1 + 2',
+shouldParseAs(
+  'A1 + 2',
   new OperatorExpression(
     new NameExpression('A1'),
     TokenTypes.PLUS,
     new NumberExpression('2'),
+  ),
+);
+
+shouldParseAs(
+  '2 - 1',
+  new OperatorExpression(
+    new NumberExpression('2'),
+    TokenTypes.MINUS,
+    new NumberExpression('1'),
+  ),
+);
+
+shouldParseAs(
+  '1 * 2 - 3',
+  new OperatorExpression(
+    new OperatorExpression(
+      new NumberExpression('1'),
+      TokenTypes.TIMES,
+      new NumberExpression('2'),
+    ),
+    TokenTypes.MINUS,
+    new NumberExpression('3'),
+  ),
+);
+
+shouldParseAs(
+  '2 / 1',
+  new OperatorExpression(
+    new NumberExpression('2'),
+    TokenTypes.DIVIDE,
+    new NumberExpression('1'),
   ),
 );
 

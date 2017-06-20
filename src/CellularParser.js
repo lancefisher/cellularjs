@@ -14,7 +14,11 @@ import {
 function parseBinaryOperator(parser, leftExpression, rightToken) {
   const precedence = parser.tokenTypeToPrecedence.get(rightToken.type);
   const rightExpression = parser.parseExpression(precedence);
-  return new OperatorExpression(leftExpression, rightToken.type, rightExpression);
+  return new OperatorExpression(
+    leftExpression,
+    rightToken.type,
+    rightExpression,
+  );
 }
 
 /**
@@ -39,9 +43,13 @@ export default class CellularParser extends Parser {
     this.prefixParseFns.set(TokenTypes.NAME, parseName);
 
     this.infixParseFns.set(TokenTypes.PLUS, parseBinaryOperator);
+    this.infixParseFns.set(TokenTypes.MINUS, parseBinaryOperator);
     this.infixParseFns.set(TokenTypes.TIMES, parseBinaryOperator);
+    this.infixParseFns.set(TokenTypes.DIVIDE, parseBinaryOperator);
 
     this.tokenTypeToPrecedence.set(TokenTypes.PLUS, 1);
+    this.tokenTypeToPrecedence.set(TokenTypes.MINUS, 1);
     this.tokenTypeToPrecedence.set(TokenTypes.TIMES, 2);
+    this.tokenTypeToPrecedence.set(TokenTypes.DIVIDE, 2);
   }
 }

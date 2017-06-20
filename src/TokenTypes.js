@@ -7,7 +7,9 @@ const TokenTypes = {
   COMMA: Symbol('COMMA'),
   NUMBER: Symbol('NUMBER'),
   PLUS: Symbol('PLUS'),
+  MINUS: Symbol('MINUS'),
   TIMES: Symbol('TIMES'),
+  DIVIDE: Symbol('DIVIDE'),
   EOF: Symbol('EOF'),
 };
 
