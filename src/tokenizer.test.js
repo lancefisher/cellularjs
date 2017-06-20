@@ -29,18 +29,18 @@ tokensShouldBe('SUM(A1:B2)', [
   new Token(TokenTypes.COLON, ':'),
   new Token(TokenTypes.NAME, 'B2'),
   new Token(TokenTypes.RPAREN, ')'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('SUM(', [
   new Token(TokenTypes.NAME, 'SUM'),
   new Token(TokenTypes.LPAREN, '('),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('SUM', [
   new Token(TokenTypes.NAME, 'SUM'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 // handles whitespace after name
@@ -51,7 +51,7 @@ tokensShouldBe('SUM (A1:B2)', [
   new Token(TokenTypes.COLON, ':'),
   new Token(TokenTypes.NAME, 'B2'),
   new Token(TokenTypes.RPAREN, ')'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('SUM(A1, SUM(A2, A3))', [
@@ -66,22 +66,22 @@ tokensShouldBe('SUM(A1, SUM(A2, A3))', [
   new Token(TokenTypes.NAME, 'A3'),
   new Token(TokenTypes.RPAREN, ')'),
   new Token(TokenTypes.RPAREN, ')'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('"red"', [
   new Token(TokenTypes.STRING, 'red'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('123', [
   new Token(TokenTypes.NUMBER, '123'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('123.456', [
   new Token(TokenTypes.NUMBER, '123.456'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldThrow('12.34.56', TypeError);
@@ -95,33 +95,33 @@ tokensShouldBe('COUNTIF(D5:D11,"red")', [
   new Token(TokenTypes.COMMA, ','),
   new Token(TokenTypes.STRING, 'red'),
   new Token(TokenTypes.RPAREN, ')'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('1 + 2', [
   new Token(TokenTypes.NUMBER, '1'),
   new Token(TokenTypes.PLUS, '+'),
   new Token(TokenTypes.NUMBER, '2'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('2 - 1', [
   new Token(TokenTypes.NUMBER, '2'),
   new Token(TokenTypes.MINUS, '-'),
   new Token(TokenTypes.NUMBER, '1'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('1 * 2', [
   new Token(TokenTypes.NUMBER, '1'),
   new Token(TokenTypes.TIMES, '*'),
   new Token(TokenTypes.NUMBER, '2'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);
 
 tokensShouldBe('4 / 2', [
   new Token(TokenTypes.NUMBER, '4'),
   new Token(TokenTypes.DIVIDE, '/'),
   new Token(TokenTypes.NUMBER, '2'),
-  new Token(TokenTypes.EOF)
+  new Token(TokenTypes.EOF),
 ]);

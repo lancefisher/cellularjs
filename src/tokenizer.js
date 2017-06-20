@@ -67,7 +67,7 @@ function tokenize(input) {
     }
 
     if (char === '"') {
-      let value = "";
+      let value = '';
       current += 1;
       char = input[current]; // skip opening "
       while (char !== '"') {
@@ -101,8 +101,7 @@ function tokenize(input) {
       let foundDot = false;
       while (char !== undefined && NUM_OR_DOT.test(char)) {
         const isDot = char === '.';
-        if (foundDot && isDot)
-          throw new TypeError('Invalid number format x.x.');
+        if (foundDot && isDot) throw new TypeError('Invalid number format x.x.');
         if (isDot) foundDot = true;
         value += char;
         current += 1;
@@ -113,7 +112,7 @@ function tokenize(input) {
     }
 
     throw new TypeError(
-      `Unexpected character: ${char} at ${current} in '${input}'`
+      `Unexpected character: ${char} at ${current} in '${input}'`,
     );
   }
 

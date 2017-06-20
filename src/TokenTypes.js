@@ -10,7 +10,7 @@ const TokenTypes = {
   MINUS: Symbol('MINUS'),
   TIMES: Symbol('TIMES'),
   DIVIDE: Symbol('DIVIDE'),
-  EOF: Symbol('EOF')
+  EOF: Symbol('EOF'),
 };
 
 export default TokenTypes;
